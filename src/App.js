@@ -4,8 +4,8 @@ import { useState } from 'react';
 import MaterialModal from './components/MaterialModal/MaterialModal';
 import io from 'socket.io-client'
 
-<script src="http:localhost:3000/socket.io/socket.io.js" />
-const socket = io.connect("http://localhost:5000")
+<script src="https://tm-frontend-eight.vercel.app/socket.io/socket.io.js" />
+const socket = io.connect("https://hr-server-dun.vercel.app/")
 
 
 function App() {
