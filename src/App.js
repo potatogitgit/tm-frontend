@@ -13,8 +13,16 @@ function App() {
   const [show, setShow] = useState(false)
   const [test, setTest] = useState()
 
+  const [site, setSite] = useState()
+
+  console.log(site)
+
   socket.on("fromserver", function (msg) {
-    setTest(msg)
+
+    if (site === msg.site) {
+      setTest(msg.msg)
+    }
+
   })
 
   const handleModalClose = () => {
@@ -46,6 +54,7 @@ function App() {
             alt="lock"
           />
           <p style={{ color: 'blue' }}>Hi {test}</p>
+          <input type={"text"} name="site" onChange={(e) => setSite(e.target.value)}></input>
         </div>
 
       </header>
