@@ -19,7 +19,7 @@ function App() {
 
   socket.on("fromserver", function ({ msg }) {
 
-    if (site === JSON.stringify(msg.site)) {
+    if (site === msg.site.String) {
       setTest(msg.msg)
     }
 
