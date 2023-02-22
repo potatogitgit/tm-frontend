@@ -19,7 +19,10 @@ function App() {
 
   socket.on("fromserver", function ({ msg }) {
 
+    console.log("Client:" + site)
+    console.log("Server: " + msg.site)
     if (site === msg.site) {
+
       setTest(msg.msg)
     }
 
