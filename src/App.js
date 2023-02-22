@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import MaterialModal from './components/MaterialModal/MaterialModal';
 import io from 'socket.io-client'
 
-<script src="https://6a68-130-105-185-166.ap.ngrok.io/socket.io/socket.io.js" />
-const socket = io.connect("https://tm-frontend-eight.vercel.app")
+<script src="/socket.io/socket.io.js" />
+const socket = io.connect("https://hr-server.onrender.com")
 
 
 function App() {
@@ -13,8 +12,8 @@ function App() {
   const [show, setShow] = useState(false)
   const [test, setTest] = useState()
 
-  socket.on("testServer", msg => {
-    setTest(msg.name)
+  socket.on("fromserver", function (msg) {
+    setTest(msg)
   })
 
   const handleModalClose = () => {
