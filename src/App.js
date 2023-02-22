@@ -17,9 +17,9 @@ function App() {
 
   console.log(site)
 
-  socket.on("fromserver", function ({msg}) {
+  socket.on("fromserver", function ({ msg }) {
 
-    if (site === msg.site) {
+    if (site == msg.site) {
       setTest(msg.msg)
     }
 
